@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 
 public class DatabaseConnectionTest {
@@ -16,12 +17,10 @@ public class DatabaseConnectionTest {
 		Connection connection = null;
 		try {
 			connection = DriverManager.getConnection(jdbcUrl, username, password);
-
-			if (connection != null) {
-				System.out.println("Database connection established successfully.");
-			}
-		} catch (SQLException e) {
+			Assert.assertNotNull(connection);
+			} catch (SQLException e) {
 			e.printStackTrace();
+			Assert.fail("Failed to establish a database connection");
 		} finally {
 			if (connection != null) {
 				try {
