@@ -50,6 +50,25 @@ CREATE TABLE `car_rental`.`user_contacts` (
     FOREIGN KEY (user_id) REFERENCES Users (user_id)
 );
 
+CREATE TABLE `car_rental`.`user_address`(
+    address_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    invoice_zipcode VARCHAR(10) NOT NULL,
+    invoice_city VARCHAR(50) NOT NULL,
+    invoice_state VARCHAR(50) NOT NULL,
+    invoice_address VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
+
+CREATE TABLE `car_rental`.`delivery_address` (
+    address_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    delivery_zipcode VARCHAR(10) NOT NULL,
+    delivery_city VARCHAR(50) NOT NULL,
+    delivery_state VARCHAR(50) NOT NULL,
+    delivery_address VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
 CREATE TABLE `car_rental`.`brands` (
     brand_id INT AUTO_INCREMENT PRIMARY KEY,
     brand_name VARCHAR(50) NOT NULL
