@@ -28,3 +28,21 @@ public class Main extends Application {
 		launch(args);
 	}
 }
+/* To-Do
+ * Build Login window
+ * Build Registration window
+ * Build profile update window
+ * Build salesman add car window
+ * Build admin window to add remove users/salesmans
+ * Build a rental procedure page
+ * create some dummy data in databases 
+ * build the database operations CRUD
+ * Create login controller and methods
+ * create profile update controller
+ * create registration controller
+ * Create Salesman controller
+ * Create Admin Controller
+ * Create User Controller
+ * 
+ * 
+ * */
