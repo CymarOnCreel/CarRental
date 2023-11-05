@@ -2,7 +2,7 @@ package application.controller;
 
 import javafx.fxml.FXML;
 
-public class RegistrationWindwoController {
+public class RegistrationWindowController {
 
 	/*TO-DO
 	 * check username is available
