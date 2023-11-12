@@ -97,3 +97,16 @@ CREATE TABLE `car_rental`.`cars` (
     FOREIGN KEY (color_id) REFERENCES Colors (color_id),
     FOREIGN KEY (fuel_type_id) REFERENCES FuelTypes (fuel_type_id)
 );
+CREATE TABLE `car_rental`.`rentals` (
+    `rental_id` INT AUTO_INCREMENT PRIMARY KEY,
+    `user_id` INT NOT NULL,
+    `salesman_id` INT NOT NULL,
+    `car_id` INT NOT NULL,
+    `start_date` DATETIME NOT NULL,
+    `end_date` DATETIME NOT NULL,
+    FOREIGN KEY (`user_id`) REFERENCES `car_rental`.`users` (`user_id`),
+    FOREIGN KEY (`salesman_id`) REFERENCES `car_rental`.`users` (`user_id`),
+    FOREIGN KEY (`car_id`) REFERENCES `car_rental`.`cars` (`car_id`)
+) ENGINE = InnoDB
+  DEFAULT CHARACTER SET = utf8
+  COLLATE = utf8_hungarian_ci;
